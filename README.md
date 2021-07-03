@@ -36,7 +36,7 @@ According to ffplay the size that the stream throws is "640x360, 25 tbr, 1200k".
 - http://www.personal-view.com/talks/discussion/6703/control-your-gh3-from-a-web-browser-now-with-video-/p1
 
 
-### Reminders
+### Self-Reminders
 
 - finish porting over all api commands
 - make a better looking controller.. put some imagination behind it.
