@@ -1,0 +1,17 @@
+{
+  "name": "hcx1000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "keep-image-fresh.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "node-cmd": "^4.0.0",
+    "node-notifier": "^10.0.0",
+    "puppeteer": "^5.5.0"
+  }
+}

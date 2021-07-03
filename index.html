@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="theme-color" content="black" />
+  <meta name='viewport' content='width=device-width, initial-scale=0, maximum-scale=0, user-scalable=0' />
+  <title>HC-X1000</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+  <style>
+    body {
+      background-color: black;
+    }
+    .btn{
+        display: block;
+        font-size: 1em;
+        border:1px solid white;
+        border-top:none;
+        border-bottom:none;
+        border-radius:0px;
+        color:black;
+        background-color:white;
+        -moz-user-select: none; 
+        -webkit-user-select: none; 
+        -ms-user-select:none; 
+        user-select:none;
+        -o-user-select:none;
+        padding-bottom:10px;
+        padding-top:10px;
+        margin-bottom: 5px;
+    }
+
+    .stream{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    width: 100%;
+    top:35%;
+    background-color: #999;
+    position: relative;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+    }
+    .contain{
+      vertical-align: middle;
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 100%;
+          -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+    }
+  </style>
+</head>
+<body>
+<div class="contain">
+<img src="/hx.mjpg" class="stream" style="width:500px;border: 3px solid white;">
+<button class="btn add" >zoom + 1</button>
+<button class="btn minus" >zoom - 1</button>
+<button class="btn zoomIn" >zoom in</button>
+<button class="btn zoomOut" >zoom out</button>
+<button class="btn zoomStop" >zoom Stop</button>
+
+</div>
+<script>
+// zoom continues unless told otherwise.
+function stopZoom(){
+    $.get( "api/zoomstop", function( data ) {
+   //console.log( data );
+  });
+}
+var STATICTIMEOUT = 1000;
+$('.minus').on( "click", function() {
+    $.get( "api/zoomout", function( data ) { });
+    setTimeout(function(){
+        stopZoom();
+    },STATICTIMEOUT);
+});
+$('.add').on( "click", function() {
+    $.get( "api/zoomin", function( data ) {});
+    setTimeout(function(){
+        stopZoom();
+    },STATICTIMEOUT);
+});
+$('.zoomIn').on( "click", function() {
+    $.get( "api/infast", function( data ) { });
+});
+$('.zoomOut').on( "click", function() {
+    $.get( "api/outfast", function( data ) { });
+});
+$('.zoomStop').on( "click", function() {
+    $.get( "api/zoomstop", function( data ) { });
+});
+$('.stream').on( "click", function() {
+    $.get( "api/autofc", function( data ) { });
+});
+
+</script>
+</body>
+</html>
