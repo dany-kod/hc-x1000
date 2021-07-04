@@ -63,7 +63,7 @@ var projectLocation = false;
 var projectName = false;
 let numOfAutoCommits = 0; // default counter for auto commits performed.
 let pullCount = 0; // count the number of pulls made
-var commitAutoMessage = '...'; // commit message the system will set each time.
+var commitAutoMessage = 'Auto Commit'; // commit message the system will set each time.
 
 
 // these two control the pace of the commits.
@@ -76,7 +76,8 @@ var commitAutoMessage = '...'; // commit message the system will set each time.
 //          - allowedGlobalTime = 20000
 
 const fileChangeTolerance = 0; // number of files changes to tolerate before making a commit
-const allowedGlobalTime = 10000; // time allowed to use globally.
+const allowedGlobalTime = 20000; // time in seconds allowed to use globally.
+const timeBetweenPushes = 2; // time in minutes to wait till next auto push.. you can set this to 0 so to go overdrive.
 
 
 // osx tool for notifying 
@@ -107,7 +108,7 @@ function performMaintenceOnProject(){
 
       if(parseFloat(data.trim()) >= fileChangeTolerance){
         // if the files that have changed exceed fileChangeTolerance then auto commit and push.
-        cmd.get('git add -A && git commit -m "'+commitAutoMessage+'" && git push origin master --force',function(error, data, standarderr){
+        cmd.get('git add -A && git commit -m "'+commitAutoMessage+'" && git push origin ',function(error, data, standarderr){
           if(data.trim().indexOf('completed with') !== -1){
                 numOfAutoCommits++; // only count commits that are positive.
           }
@@ -124,9 +125,9 @@ function performMaintenceOnProject(){
           var date = moment(); // current date
           var tmpDate = new Date(someData.trim()); // date of last known commit
           // check if the last commit was more than 5 mins ago.
-          if(Math.round(parseFloat(moment.duration(date.diff(tmpDate)).asMinutes())) > 5){
+          if(Math.round(parseFloat(moment.duration(date.diff(tmpDate)).asMinutes())) > timeBetweenPushes){
             //  if 5mins have passed we have changes.. so we create autocommit.
-            cmd.get('git add -A && git commit -m "'+commitAutoMessage+'" && git push origin master --force',function(error, data, standarderr){
+            cmd.get('git add -A && git commit -m "'+commitAutoMessage+'" && git push origin ',function(error, data, standarderr){
           if(data.trim().indexOf('completed with') !== -1){
                 numOfAutoCommits++; // only count commits that are positive.
               }
