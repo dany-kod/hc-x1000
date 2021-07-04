@@ -13,7 +13,7 @@ from xml.etree import ElementTree
 from netifaces import interfaces, ifaddresses, AF_INET
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
-#from opencv_modify import OpenCvModify
+from opencv_modify import OpenCvModify
 
 from PIL import Image
 import ffmpeg
