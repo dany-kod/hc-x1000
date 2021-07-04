@@ -42,6 +42,9 @@ class hcXSERVER():
 
 	global cameraAvaliable
 	cameraAvaliable = True
+
+	global opencvFilters
+	opencvFilters = False
 	# make a condition if camera doesn't exist at all
 	if hcx1000Address == None :
 		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
