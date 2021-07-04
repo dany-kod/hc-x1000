@@ -23,6 +23,7 @@ import cv2
 import json
 from io import BytesIO
 
+from opencv_modify import OpenCvModify
 
 
 class hcXSERVER():
