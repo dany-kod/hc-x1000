@@ -76,7 +76,7 @@ var commitAutoMessage = '...'; // commit message the system will set each time.
 //          - allowedGlobalTime = 20000
 
 const fileChangeTolerance = 0; // number of files changes to tolerate before making a commit
-const allowedGlobalTime = 20000; // time allowed to use globally.
+const allowedGlobalTime = 10000; // time allowed to use globally.
 
 
 // osx tool for notifying 
