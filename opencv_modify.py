@@ -15,4 +15,4 @@ class OpenCvModify():
 		#image = image * scalingFactor
 		# Add the offset for increasing brightness
 		brigthImage = img + brightnessOffset
-		return brigthImage
+		return np.round(brigthImage).astype("int")
