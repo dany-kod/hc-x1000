@@ -5,14 +5,12 @@ import numpy as np
 
 class OpenCvModify():
 
-	def modBrightness(img,brightnessOffset) :
-
-		
+	def modFilterHills(img,mod) :
 		# Convert unsigned int to float
-		img = np.float32(img)
-
-		# Scale the values so that they lie between [0,1]
-		#image = image * scalingFactor
-		# Add the offset for increasing brightness
-		brigthImage = img + brightnessOffset
-		return np.round(brigthImage).astype("int")
+		hsvImage = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+		img = np.float32(hsvImage)
+		H,S,V = cv2.split(hsvImage)
+		V = np.clip(V*mod,0,255)
+		hsvImage = np.uint8(cv2.merge([H,S,V]))
+		rgb = cv2.cvtColor(hsvImage, cv2.COLOR_HSV2BGR)
+		return rgb
