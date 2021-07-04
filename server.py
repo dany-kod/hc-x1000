@@ -14,6 +14,7 @@ from xml.etree import ElementTree
 from netifaces import interfaces, ifaddresses, AF_INET
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
+from opencv_modify import OpenCvModify
 
 from PIL import Image
 import ffmpeg
@@ -23,7 +24,6 @@ import cv2
 import json
 from io import BytesIO
 
-from opencv_modify import OpenCvModify
 
 
 class hcXSERVER():
