@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+# just another opencv filter class
 
 
 class OpenCvModify():
