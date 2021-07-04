@@ -18,7 +18,8 @@ from socketserver import ThreadingMixIn
 from PIL import Image
 import ffmpeg
 import numpy
-import upnpy
+# import upnpy # library has a bug in discover
+import upnpclient
 import cv2
 import json
 from io import BytesIO
@@ -28,8 +29,9 @@ from io import BytesIO
 class hcXSERVER():
 	global hcx1000Address
 	hcx1000Address = None
-	upnp = upnpy.UPnP()
-	devices = upnp.discover()
+	#upnp = upnpy.UPnP()
+	#devices = upnp.discover()
+	devices = upnpclient.discover()
 	for i in devices:
 		if str(i).find("X1000") != -1 :
 			#grab the address
