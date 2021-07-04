@@ -119,7 +119,8 @@ class hcXSERVER():
 							image =  numpy.fromstring(raw_image, dtype='uint8')
 
 							image = image.reshape((HEIGHT,WIDTH,3))          # Notice how height is specified first and then width
-							image = OpenCvModify.modFilterHills(image, 5) # 4 - 200
+							if opencvFilters:
+								image = OpenCvModify.modFilterHills(image, 5) # 4 - 200
 							topLeft = (0, 640)
 							bottomRight = (WIDTH, HEIGHT)
 							xl, yl = topLeft[0], topLeft[1]
