@@ -5,7 +5,7 @@ import numpy as np
 
 class OpenCvModify():
 
-	def modBrightness(img,amount) :
+	def modBrightness(img,brightnessOffset) :
 
 		
 		# Convert unsigned int to float
@@ -13,8 +13,6 @@ class OpenCvModify():
 
 		# Scale the values so that they lie between [0,1]
 		#image = image * scalingFactor
-
-		brightnessOffset = amount
-
 		# Add the offset for increasing brightness
-		return img + brightnessOffset
+		brigthImage = img + brightnessOffset
+		return brigthImage
