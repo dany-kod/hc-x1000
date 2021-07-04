@@ -5,7 +5,7 @@ import numpy as np
 
 class OpenCvModify():
 
-	def giveBrightness(img,amount) :
+	def modBrightness(img,amount) :
 
 		
 		# Convert unsigned int to float

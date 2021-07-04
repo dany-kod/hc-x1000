@@ -114,7 +114,9 @@ class hcXSERVER():
 	                    # transform the byte read into a numpy array
 						if len(raw_image) != 0 :
 							image =  numpy.fromstring(raw_image, dtype='uint8')
+
 							image = image.reshape((HEIGHT,WIDTH,3))          # Notice how height is specified first and then width
+							image = OpenCvModify.modBrightness(image, 50)
 							topLeft = (0, 640)
 							bottomRight = (WIDTH, HEIGHT)
 							xl, yl = topLeft[0], topLeft[1]
