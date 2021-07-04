@@ -13,7 +13,7 @@ from xml.etree import ElementTree
 from netifaces import interfaces, ifaddresses, AF_INET
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
-from opencv_modify import OpenCvModify
+#from opencv_modify import OpenCvModify
 
 from PIL import Image
 import ffmpeg
@@ -115,7 +115,7 @@ class hcXSERVER():
 							image =  numpy.fromstring(raw_image, dtype='uint8')
 
 							image = image.reshape((HEIGHT,WIDTH,3))          # Notice how height is specified first and then width
-							image = OpenCvModify.modBrightness(image, 50)
+							#image = OpenCvModify.modBrightness(image, 50)
 							topLeft = (0, 640)
 							bottomRight = (WIDTH, HEIGHT)
 							xl, yl = topLeft[0], topLeft[1]
