@@ -1,3 +1,5 @@
+from netifaces import interfaces, ifaddresses, AF_INET
+
 import sys
 import time
 import os
@@ -9,7 +11,6 @@ import requests
 
 from time import sleep
 from xml.etree import ElementTree
-from netifaces import interfaces, ifaddresses, AF_INET
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
 from opencv_modify import OpenCvModify
@@ -223,4 +224,3 @@ class hcXSERVER():
 			server.serve_forever()
 		except KeyboardInterrupt:
 			server.socket.close()
-
