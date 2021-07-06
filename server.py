@@ -1,5 +1,6 @@
 from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
+from which_check import checkInstalls as wch
 
 import sys
 import time
@@ -48,6 +49,8 @@ class hcXSERVER():
 
 	if cameraAvaliable : 
 
+		
+		findNode_return = wch.main("which node")
 		if len(findNode_return) == 0 :
 			print("Node is not installed.")
 
