@@ -15,7 +15,8 @@ if __name__ == '__main__':
     print("testing camera discover can be found.")
     camera = cam.main()
     print(camera)
-
+    if camera == "Unknown" :
+        print("\n\n\nCAMERA WAS NOT FOUND.\nTEST FAILED..\n\n\n")
 
     print("test we can find nodejs on system.")
     nodejs = wch.main("which node")
