@@ -41,14 +41,15 @@ class hcXSERVER():
 	global opencvFilters
 	global regularImage
 	
+
+	WIDTH = 1280
+	HEIGHT = 720
+
 	blank_image = rouge.blank(WIDTH,HEIGHT)
 	opencvFilters = False
 	regularImage = True
 	hcx1000Address = cam.main()
 	cameraAvaliable = True
-	
-	WIDTH = 1280
-	HEIGHT = 720
 	
 	if hcx1000Address == "Unknown" :
 		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
