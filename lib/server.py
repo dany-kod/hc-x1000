@@ -89,7 +89,7 @@ class hcXSERVER():
 			if len(self.path) == 1:
 				# this is root.. lets give them index page
 				root = os.path.dirname(os.path.abspath(__file__))
-				filename = root +'/index.html'
+				filename = root +'html/index.html'
 				self.send_response(200)
 				self.send_header('Content-type', 'text/html')
 				self.end_headers()
