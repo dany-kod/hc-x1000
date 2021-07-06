@@ -132,11 +132,15 @@ class hcXSERVER():
 						jpg = Image.fromarray(imgRGB)
 						tmpFile = BytesIO()
 						jpg.save(tmpFile,'JPEG')
-						self.wfile.write("--jpgboundary".encode())
-						self.send_header('Content-type','image/jpeg')
-						self.send_header('Content-length',str(tmpFile.getbuffer().nbytes))
-						self.end_headers()
-						jpg.save(self.wfile,'JPEG')
+						try:
+							self.wfile.write("--jpgboundary".encode())
+							self.send_header('Content-type','image/jpeg')
+							self.send_header('Content-length',str(tmpFile.getbuffer().nbytes))
+							self.end_headers()
+							jpg.save(self.wfile,'JPEG')
+						except:
+							print("So thats an error...")
+							break
 						time.sleep(0.05)
 					except KeyboardInterrupt:
 						break
