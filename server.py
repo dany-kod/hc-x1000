@@ -1,4 +1,5 @@
 from local_ip import ipLocalSystem as ip
+from camera_discovery import cameraDiscovery as cam
 
 import sys
 import time
@@ -26,14 +27,8 @@ from io import BytesIO
 
 class hcXSERVER():
 	global hcx1000Address
-	hcx1000Address = None
-	netdis = NetworkDiscovery()
-	netdis.scan()
-	for dev in netdis.discover():
-		for i in netdis.get_info(dev):
-			if i['name'].find("X1000") != -1 :
-				hcx1000Address = i['host']
-	netdis.stop()
+	hcx1000Address = cam.main()
+
 	global WIDTH
 	WIDTH = 1280
 	global HEIGHT
