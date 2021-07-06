@@ -15,5 +15,5 @@ if __name__ == '__main__':
 
 
     print("test we can find nodejs on system.")
-    nodejs = wch.main()
+    nodejs = wch.main("which node")
     print(nodejs)
