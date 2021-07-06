@@ -1,4 +1,4 @@
-import hcXSERVER
+import lib.server.hcXSERVER
 # this will find our local systems ip address for us.
 class testSystem():
 	def main():
