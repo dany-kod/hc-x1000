@@ -23,19 +23,6 @@ According to ffplay the size that the stream throws is "640x360, 25 tbr, 1200k".
 
 
 
-## References 
-
-- https://linuxhint.com/send_receive_udp_python/
-- https://stackoverflow.com/questions/19210414/byte-array-to-hex-string
-- https://stackoverflow.com/questions/37618851/socket-reading-udp-packet
-- https://wiki.python.org/moin/UdpCommunication
-- https://github.com/yushuhuang/webcam/blob/master/receive.py
-- https://github.com/maiermic/panasonic-image-app
-- https://github.com/isontheline/panasonic-html-image-app
-- https://github.com/auberginehill/panasonic-html-image-app
-- http://www.personal-view.com/talks/discussion/6703/control-your-gh3-from-a-web-browser-now-with-video-/p1
-
-
 ### Self-Reminders
 
 - finish porting over all api commands
