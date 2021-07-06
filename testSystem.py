@@ -43,7 +43,7 @@ if __name__ == '__main__':
         if trackPid is None:
             pass
         else:
-            print("Process is being killed.")
+            print("Process was killed and clean exit was a success.")
             os.kill(trackPid, signal.SIGTERM)
 
     print("test we can kill nodejs after exit.")

@@ -9,5 +9,6 @@ class ipLocalSystem():
 			for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] ):
 				if i['addr'] != 'No IP addr':
 					# be partial to 192 addresses
-					foundIp = i['addr']
+					if i['addr'].find("192") != -1:
+						foundIp = i['addr']
 		return foundIp
