@@ -4,6 +4,7 @@ from lib.which_check import checkInstalls as wch
 from lib.run_node import runNode as runrun
 from lib.rouge_images import imageRouge as rouge
 from lib.opencv_modify import OpenCvModify
+from lib.test import testSystem
 
 import os
 import signal
@@ -200,6 +201,15 @@ class hcXSERVER():
 				self.end_headers()
 				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=tele-fast')
 				your_json = '["success"]'
+				parsed = json.loads(your_json)
+				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
+				return
+			if self.path.endswith('api/test'):
+				self.send_response(200)
+				self.send_header('Content-type','application/json')
+				self.end_headers()
+				checkTest = testSystem.main()
+				your_json = '["success "+checkTest+""]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
 				return
