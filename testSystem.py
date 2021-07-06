@@ -2,7 +2,9 @@ from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
 from which_check import checkInstalls as wch
 from run_node import runNode as runrun
+from rouge_kill import killRouge as killkill
 
+import atexit
 
 
 if __name__ == '__main__':
@@ -27,3 +29,6 @@ if __name__ == '__main__':
     nodejsCommand = [ nodejs,'keep-image-fresh.js', camera ]
     trackPid = runrun.main(nodejsCommand)
     print(trackPid)
+
+    print("test we can kill nodejs after exit.")
+    atexit.register(killkill.kill_child(trackPid))
