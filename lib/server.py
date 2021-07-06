@@ -211,7 +211,7 @@ class hcXSERVER():
 				self.send_header('Content-type','application/json')
 				self.end_headers()
 				checkTest = testSystem.main()
-				your_json = '["success "+checkTest+""]'
+				your_json = '["success '+checkTest+'"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
 				return
