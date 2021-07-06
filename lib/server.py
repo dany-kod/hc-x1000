@@ -139,7 +139,7 @@ class hcXSERVER():
 							self.end_headers()
 							jpg.save(self.wfile,'JPEG')
 						except:
-							print("So thats an error...")
+							#print("Client ended session. Doing clean break.")
 							break
 						time.sleep(0.05)
 					except KeyboardInterrupt:
