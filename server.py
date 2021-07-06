@@ -2,7 +2,6 @@ import sys
 import time
 import os
 import signal
-import atexit
 
 import subprocess as sp
 import threading
@@ -224,12 +223,4 @@ class hcXSERVER():
 			server.serve_forever()
 		except KeyboardInterrupt:
 			server.socket.close()
-
-	def kill_child():
-		if child_pid is None:
-			pass
-		else:
-			os.kill(child_pid, signal.SIGTERM)
-
-	atexit.register(kill_child)
 
