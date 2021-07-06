@@ -1,4 +1,4 @@
-from netifaces import interfaces, ifaddresses, AF_INET
+from local_ip import ipLocalSystem as ip
 
 import sys
 import time
@@ -18,7 +18,6 @@ from opencv_modify import OpenCvModify
 from PIL import Image
 import ffmpeg
 import numpy
-from netdisco.discovery import NetworkDiscovery
 import cv2
 import json
 from io import BytesIO
@@ -207,12 +206,7 @@ class hcXSERVER():
 		"""Handle requests in a separate thread."""
 
 	def getLocalIp():
-		foundIp = 'localhost';
-		for ifaceName in interfaces():
-			for i in ifaddresses(ifaceName).setdefault(AF_INET, [{'addr':'No IP addr'}] ):
-				if i['addr'] != 'No IP addr':
-					foundIp = i['addr']
-		return foundIp
+		return ip.main();
 
 	def main():
 		global locationServer
