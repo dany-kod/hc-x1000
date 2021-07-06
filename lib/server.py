@@ -85,7 +85,8 @@ class hcXSERVER():
 		global pipe
 		pipe = runrun.rawCommand(command)
 
-
+	def getTracks():
+		return trackPid
 	# prepare a default image
 	
 	class cameraHTTPSERVER(BaseHTTPRequestHandler):
