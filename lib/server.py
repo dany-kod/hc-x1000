@@ -40,7 +40,8 @@ class hcXSERVER():
 	global blank_image
 	global opencvFilters
 	global regularImage
-	
+	global trackPid
+
 
 	WIDTH = 1280
 	HEIGHT = 720
@@ -63,7 +64,6 @@ class hcXSERVER():
 			print("Node is not installed.")
 		nodejsCommand = [ findNode_return,'keep-image-fresh.js', hcx1000Address ]
 		# Here you can get the PID
-		global trackPid
 		trackPid = runrun.main(nodejsCommand)
 		print(trackPid)
 
