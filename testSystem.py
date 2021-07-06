@@ -32,11 +32,18 @@ if __name__ == '__main__':
     trackPid = runrun.main(nodejsCommand)
     print(trackPid)
 
+
+    print("test we can find ffmpeg on system.")
+    findFFmpeg = wch.main("which ffmpeg")
+    print(findFFmpeg)
+
+
     # now that we have our process created lets declare a function to end it.
     def kill_child():
         if trackPid is None:
             pass
         else:
+            print("Process is being killed.")
             os.kill(trackPid, signal.SIGTERM)
 
     print("test we can kill nodejs after exit.")

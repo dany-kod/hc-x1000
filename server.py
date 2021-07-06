@@ -1,11 +1,14 @@
 from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
 from which_check import checkInstalls as wch
+from run_node import runNode as runrun
+
+import os
+import signal
+import atexit
 
 import sys
 import time
-import os
-import signal
 
 import subprocess as sp
 import threading
@@ -49,24 +52,21 @@ class hcXSERVER():
 
 	if cameraAvaliable : 
 
-		
+
 		findNode_return = wch.main("which node")
 		if len(findNode_return) == 0 :
 			print("Node is not installed.")
 
 		nodejsCommand = [ findNode_return,'keep-image-fresh.js', hcx1000Address ]
-		nodejs = sp.Popen(nodejsCommand, stdin=None, stdout=None, stderr=None, close_fds=True)
 		# Here you can get the PID
 		global child_pid
-		child_pid = nodejs.pid
+    	child_pid = runrun.main(nodejsCommand)
 		print(child_pid)
 
-		findFFmpeg = sp.Popen("which ffmpeg", shell=True, stdout=sp.PIPE)
-		findFFmpeg_return = findFFmpeg.stdout.read().strip()
-		if len(findFFmpeg_return) == 0 :
+		FFMPEG_BIN = wch.main("which ffmpeg")
+		if len(FFMPEG_BIN) == 0 :
 			print("ffmpeg is not installed.")
-		# location of ffmpeg
-		FFMPEG_BIN = findFFmpeg_return
+
 		command = [ FFMPEG_BIN,
 					'-hide_banner',
 					'-loglevel', 'panic', 
@@ -217,3 +217,14 @@ class hcXSERVER():
 			server.serve_forever()
 		except KeyboardInterrupt:
 			server.socket.close()
+
+    # now that we have our process created lets declare a function to end it.
+    def kill_child():
+        if trackPid is None:
+            pass
+        else:
+            print("Process is being killed.")
+            os.kill(trackPid, signal.SIGTERM)
+
+    print("test we can kill nodejs after exit.")
+    atexit.register(kill_child)
