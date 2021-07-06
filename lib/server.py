@@ -3,6 +3,7 @@ from lib.camera_discovery import cameraDiscovery as cam
 from lib.which_check import checkInstalls as wch
 from lib.run_node import runNode as runrun
 from lib.rouge_images import imageRouge as rouge
+from lib.opencv_modify import OpenCvModify
 
 import os
 import signal
@@ -19,7 +20,6 @@ from time import sleep
 from xml.etree import ElementTree
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
-from opencv_modify import OpenCvModify
 
 from PIL import Image
 import ffmpeg
