@@ -2,7 +2,7 @@
 # hc-x1000
 Control Panasonic's 4k Camera via web.
 
-![alt text](imgs/cam.jpg "Camera")
+![alt text](lib/html/imgs/cam.jpg "Camera")
 
 
 ## Description
