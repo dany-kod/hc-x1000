@@ -39,7 +39,7 @@ if __name__ == '__main__':
     print(findFFmpeg)
 
     print("test we can create empty numpy image on system.")
-    rouge.main()
+    rouge.blank(1200,720)
     print("success?")
     # now that we have our process created lets declare a function to end it.
     def kill_child():

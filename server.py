@@ -2,6 +2,7 @@ from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
 from which_check import checkInstalls as wch
 from run_node import runNode as runrun
+from rouge_images import imageRouge as rouge
 
 import os
 import signal
@@ -43,24 +44,22 @@ class hcXSERVER():
 	WIDTH = 1280
 	global HEIGHT
 	HEIGHT = 720
-
-
+	global blank_image
+	blank_image = rouge.blank(WIDTH,HEIGHT)
 	global opencvFilters
 	opencvFilters = False
+	global regularImage
+	regularImage = True
 	# make a condition if camera doesn't exist at all
-
-
 	if cameraAvaliable : 
-
 
 		findNode_return = wch.main("which node")
 		if len(findNode_return) == 0 :
 			print("Node is not installed.")
-
 		nodejsCommand = [ findNode_return,'keep-image-fresh.js', hcx1000Address ]
 		# Here you can get the PID
 		global child_pid
-    	child_pid = runrun.main(nodejsCommand)
+		child_pid = runrun.main(nodejsCommand)
 		print(child_pid)
 
 		FFMPEG_BIN = wch.main("which ffmpeg")
@@ -79,14 +78,11 @@ class hcXSERVER():
 					'-an','-sn',              # we want to disable audio processing (there is no audio)
 					'-f', 'image2pipe', '-']
 		global pipe
-		pipe = sp.Popen(command, stdout = sp.PIPE)
+		pipe = runrun.rawCommand(command)
 
-	global regularImage
-	regularImage = True
+
 	# prepare a default image
-	global blank_image
-	blank_image = numpy.zeros((HEIGHT,WIDTH,3), numpy.uint8)
-
+	
 	class cameraHTTPSERVER(BaseHTTPRequestHandler):
 
 		def do_GET(self):
