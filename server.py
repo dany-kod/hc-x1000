@@ -214,7 +214,6 @@ class hcXSERVER():
 		except KeyboardInterrupt:
 			server.socket.close()
 
-    # now that we have our process created lets declare a function to end it.
 	def kill_child():
 		if trackPid is None:
 			pass
