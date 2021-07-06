@@ -33,24 +33,27 @@ from io import BytesIO
 class hcXSERVER():
 	global hcx1000Address
 	global cameraAvaliable
+	global WIDTH
+	global HEIGHT
 
+	global blank_image
+	global opencvFilters
+	global regularImage
+	
+	blank_image = rouge.blank(WIDTH,HEIGHT)
+	opencvFilters = False
+	regularImage = True
 	hcx1000Address = cam.main()
 	cameraAvaliable = True
-	if hcx1000Address == None :
+	
+	WIDTH = 1280
+	HEIGHT = 720
+	
+	if hcx1000Address == "Unknown" :
 		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
 		cameraAvaliable = False
 
-	global WIDTH
-	WIDTH = 1280
-	global HEIGHT
-	HEIGHT = 720
-	global blank_image
-	blank_image = rouge.blank(WIDTH,HEIGHT)
-	global opencvFilters
-	opencvFilters = False
-	global regularImage
-	regularImage = True
-	# make a condition if camera doesn't exist at all
+# make a condition if camera doesn't exist at all
 	if cameraAvaliable : 
 
 		findNode_return = wch.main("which node")
