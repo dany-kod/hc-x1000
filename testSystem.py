@@ -2,6 +2,7 @@ from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
 from which_check import checkInstalls as wch
 from run_node import runNode as runrun
+from rouge_images import imageRouge as rouge
 
 import os
 import signal
@@ -37,7 +38,9 @@ if __name__ == '__main__':
     findFFmpeg = wch.main("which ffmpeg")
     print(findFFmpeg)
 
-
+    print("test we can create empty numpy image on system.")
+    rouge.main()
+    print("success?")
     # now that we have our process created lets declare a function to end it.
     def kill_child():
         if trackPid is None:
