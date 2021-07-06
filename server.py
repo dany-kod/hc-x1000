@@ -215,12 +215,10 @@ class hcXSERVER():
 			server.socket.close()
 
     # now that we have our process created lets declare a function to end it.
-    def kill_child():
-        if trackPid is None:
-            pass
-        else:
-            print("Process is being killed.")
-            os.kill(trackPid, signal.SIGTERM)
+	def kill_child():
+		if trackPid is None:
+			pass
+		else:
+			os.kill(trackPid, signal.SIGTERM)
 
-    print("test we can kill nodejs after exit.")
-    atexit.register(kill_child)
+	atexit.register(kill_child)
