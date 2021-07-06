@@ -2,8 +2,9 @@ from local_ip import ipLocalSystem as ip
 from camera_discovery import cameraDiscovery as cam
 from which_check import checkInstalls as wch
 from run_node import runNode as runrun
-from rouge_kill import killRouge as killkill
 
+import os
+import signal
 import atexit
 
 
@@ -27,8 +28,16 @@ if __name__ == '__main__':
 
     print("test we can run nodejs on system.")
     nodejsCommand = [ nodejs,'keep-image-fresh.js', camera ]
+    global trackPid
     trackPid = runrun.main(nodejsCommand)
     print(trackPid)
 
+    # now that we have our process created lets declare a function to end it.
+    def kill_child():
+        if trackPid is None:
+            pass
+        else:
+            os.kill(trackPid, signal.SIGTERM)
+
     print("test we can kill nodejs after exit.")
-    atexit.register(killkill.kill_child(trackPid))
+    atexit.register(kill_child)
