@@ -1,8 +1,9 @@
-from lib.server import trackPid
+from lib.server import hcXSERVER as hc
 # this will find our local systems ip address for us.
 class testSystem():
 	def main():
-		if trackPid is None :
+		what = hc.getTracks();
+		if what is None :
 			return "failed"
-		print(trackPid)
-		return trackPid
+		print(what)
+		return what
