@@ -9,3 +9,5 @@ Pillow
 pymongo
 PyQt5
 zeroconf
+matplotlib
+netifaces
