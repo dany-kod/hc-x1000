@@ -2,7 +2,7 @@ from netdisco.discovery import NetworkDiscovery
 # this will find our local systems ip address for us.
 class cameraDiscovery():
     def main():
-        hcx1000Address = "Unknown";
+        hcx1000Address = None;
         netdis = NetworkDiscovery()
         netdis.scan()
         for dev in netdis.discover():

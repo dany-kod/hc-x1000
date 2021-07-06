@@ -27,26 +27,27 @@ from io import BytesIO
 
 class hcXSERVER():
 	global hcx1000Address
+	global cameraAvaliable
+
 	hcx1000Address = cam.main()
+	cameraAvaliable = True
+	if hcx1000Address == None :
+		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
+		cameraAvaliable = False
 
 	global WIDTH
 	WIDTH = 1280
 	global HEIGHT
 	HEIGHT = 720
 
-	global cameraAvaliable
-	cameraAvaliable = True
 
 	global opencvFilters
 	opencvFilters = False
 	# make a condition if camera doesn't exist at all
-	if hcx1000Address == None :
-		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
-		cameraAvaliable = False
+
 
 	if cameraAvaliable : 
-		findNode = sp.Popen("which node", shell=True, stdout=sp.PIPE)
-		findNode_return = findNode.stdout.read().strip()
+
 		if len(findNode_return) == 0 :
 			print("Node is not installed.")
 
