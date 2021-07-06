@@ -58,9 +58,9 @@ class hcXSERVER():
 			print("Node is not installed.")
 		nodejsCommand = [ findNode_return,'keep-image-fresh.js', hcx1000Address ]
 		# Here you can get the PID
-		global child_pid
-		child_pid = runrun.main(nodejsCommand)
-		print(child_pid)
+		global trackPid
+		trackPid = runrun.main(nodejsCommand)
+		print(trackPid)
 
 		FFMPEG_BIN = wch.main("which ffmpeg")
 		if len(FFMPEG_BIN) == 0 :
