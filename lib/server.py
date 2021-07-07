@@ -9,13 +9,13 @@ from lib.test import testSystem
 from lib.http_api import httpApiServer
 
 
-import os
 import signal
 import atexit
 
 import sys
 import time
 
+import os
 
 
 from xml.etree import ElementTree
