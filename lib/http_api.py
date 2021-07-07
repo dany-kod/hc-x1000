@@ -1,7 +1,7 @@
 from lib.opencv_modify import OpenCvModify
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from socketserver import ThreadingMixIn
-from time
+import time
 
 
 import lib.server
