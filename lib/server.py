@@ -84,6 +84,12 @@ class hcX():
 	def rawImage():
 		return pipe.stdout.read(WIDTH*HEIGHT*3)
 
+	def kill_child():
+		if trackPid is None:
+			pass
+		else:
+			os.kill(trackPid, signal.SIGTERM)
+			
 	def main():
 		global locationServer
 		locationServer = hcX.getLocalIp()
@@ -94,11 +100,5 @@ class hcX():
 			server.serve_forever()
 		except KeyboardInterrupt:
 			server.socket.close()
-
-	def kill_child():
-		if trackPid is None:
-			pass
-		else:
-			os.kill(trackPid, signal.SIGTERM)
 
 	atexit.register(kill_child)
