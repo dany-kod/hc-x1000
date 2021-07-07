@@ -44,9 +44,7 @@ class hcX():
 		print("\n\n\nCAMERA WAS NOT FOUND.\n\n\n")
 		cameraAvaliable = False
 
-# make a condition if camera doesn't exist at all
 	if cameraAvaliable : 
-
 		findNode_return = wch.main("which node")
 		if len(findNode_return) == 0 :
 			print("Node is not installed.")
@@ -73,6 +71,8 @@ class hcX():
 		global pipe
 		pipe = runrun.rawCommand(command)
 
+	def toggleCv():
+		return opencvFilters = !opencvFilters
 	def getTracks():
 		return trackPid
 	def camAvaliable():
@@ -89,7 +89,7 @@ class hcX():
 			pass
 		else:
 			os.kill(trackPid, signal.SIGTERM)
-			
+
 	def main():
 		global locationServer
 		locationServer = hcX.getLocalIp()
