@@ -40,11 +40,11 @@ class httpApiServer():
 							raw_image = lib.server.hcX.rawImage()
 						else :
 							raw_image = 0
-
 	                    # transform the byte read into a numpy array
 						if len(raw_image) != 0 :
 							image =  numpy.fromstring(raw_image, dtype='uint8')
-
+							WIDTH = 1280
+							HEIGHT = 720
 							image = image.reshape((HEIGHT,WIDTH,3))          # Notice how height is specified first and then width
 							if opencvFilters:
 								image = OpenCvModify.modFilterHills(image, 5) # 4 - 200
