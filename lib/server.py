@@ -19,7 +19,6 @@ import time
 
 
 from xml.etree import ElementTree
-from socketserver import ThreadingMixIn
 
 from PIL import Image
 import ffmpeg
