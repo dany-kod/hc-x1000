@@ -19,7 +19,6 @@ import os
 
 from xml.etree import ElementTree
 
-from PIL import Image
 import ffmpeg
 from io import BytesIO
 

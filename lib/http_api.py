@@ -12,6 +12,7 @@ import os
 import json
 import cv2
 import numpy
+from PIL import Image
 
 
 class httpApiServer():
