@@ -72,7 +72,12 @@ class hcX():
 		pipe = runrun.rawCommand(command)
 
 	def toggleCv():
-		return opencvFilters = !opencvFilters
+		if opencvFilters :
+			opencvFilters = False
+		else :
+			opencvFilters = True
+		return opencvFilters
+		
 	def getTracks():
 		return trackPid
 	def camAvaliable():
