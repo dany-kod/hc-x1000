@@ -86,8 +86,13 @@ class hcXSERVER():
 		return trackPid
 	# prepare a default image
 	
+	def camAvaliable():
+		return cameraAvaliable
+
 	def getLocalIp():
 		return ip.main();
+	def rawImage():
+		return pipe.stdout.read(WIDTH*HEIGHT*3)
 
 	def main():
 		global locationServer

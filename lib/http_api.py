@@ -34,7 +34,7 @@ class httpApiServer():
 				while True:
 					try:
 						if lib.server.camAvaliable() :
-							raw_image = pipe.stdout.read(WIDTH*HEIGHT*3)
+							raw_image = lib.server.rawImage()
 						else :
 							raw_image = 0
 
