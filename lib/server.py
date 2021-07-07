@@ -28,7 +28,7 @@ from io import BytesIO
 
 
 
-class hcXSERVER():
+class hcX():
 	global hcx1000Address
 	global cameraAvaliable
 	global WIDTH
