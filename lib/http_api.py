@@ -36,7 +36,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','multipart/x-mixed-replace; boundary=--jpgboundary')
 				self.end_headers()
-				print(lib.server.hcX.hcx1000Address)
+				
 				while True:
 					try:
 						if lib.server.hcX.camAvaliable() :
@@ -86,7 +86,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=tele-normal')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=tele-normal')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
@@ -95,7 +95,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=wide-normal')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=wide-normal')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
@@ -104,7 +104,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=zoomstop')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=zoomstop')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
@@ -113,7 +113,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=pushaf')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=pushaf')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
@@ -122,7 +122,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=wide-fast')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=wide-fast')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
@@ -131,7 +131,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
 				self.end_headers()
-				r = requests.get('http://'+str(hcx1000Address)+'/cam.cgi?mode=camcmd&value=tele-fast')
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=camcmd&value=tele-fast')
 				your_json = '["success"]'
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
