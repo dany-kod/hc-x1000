@@ -33,8 +33,8 @@ class httpApiServer():
 				self.end_headers()
 				while True:
 					try:
-						if lib.server.hcXSERVER.camAvaliable() :
-							raw_image = lib.server.hcXSERVER.rawImage()
+						if lib.server.hcX.camAvaliable() :
+							raw_image = lib.server.hcX.rawImage()
 						else :
 							raw_image = 0
 
