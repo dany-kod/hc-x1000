@@ -99,7 +99,7 @@ class hcXSERVER():
 		locationServer = hcXSERVER.getLocalIp()
 		PORTNUMBER = 7099
 		try:
-			server = httpApiServer.ThreadedHTTPServer((locationServer, PORTNUMBER), hcXSERVER.cameraHTTPSERVER)
+			server = httpApiServer.ThreadedHTTPServer((locationServer, PORTNUMBER), httpApiServer.cameraHTTPSERVER)
 			print( "camera api server started, visit http://"+locationServer+":"+str(PORTNUMBER)+"/")
 			server.serve_forever()
 		except KeyboardInterrupt:
