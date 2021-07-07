@@ -20,7 +20,6 @@ import os
 from xml.etree import ElementTree
 
 import ffmpeg
-from io import BytesIO
 
 
 
