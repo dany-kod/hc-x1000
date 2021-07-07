@@ -3,7 +3,6 @@ from lib.camera_discovery import cameraDiscovery as cam
 from lib.which_check import checkInstalls as wch
 from lib.run_node import runNode as runrun
 from lib.rouge_images import imageRouge as rouge
-from lib.opencv_modify import OpenCvModify
 from lib.http_api import httpApiServer
 
 
