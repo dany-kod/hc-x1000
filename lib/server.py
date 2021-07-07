@@ -17,8 +17,7 @@ import sys
 import time
 
 import subprocess as sp
-import threading
-import requests 
+
 
 from time import sleep
 from xml.etree import ElementTree
