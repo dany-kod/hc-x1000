@@ -10,6 +10,8 @@ from socketserver import ThreadingMixIn
 from time import sleep
 
 import json
+import cv2
+
 
 class httpApiServer():
 
