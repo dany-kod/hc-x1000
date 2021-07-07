@@ -96,7 +96,7 @@ class hcX():
 
 	def main():
 		global locationServer
-		locationServer = hcXSERVER.getLocalIp()
+		locationServer = hcX.getLocalIp()
 		PORTNUMBER = 7099
 		try:
 			server = httpApiServer.ThreadedHTTPServer((locationServer, PORTNUMBER), httpApiServer.cameraHTTPSERVER)
