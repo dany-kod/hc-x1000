@@ -22,8 +22,6 @@ from xml.etree import ElementTree
 
 from PIL import Image
 import ffmpeg
-import numpy
-import cv2
 from io import BytesIO
 
 
