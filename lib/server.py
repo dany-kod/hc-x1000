@@ -86,6 +86,9 @@ class hcX():
 	def camAvaliable():
 		return cameraAvaliable
 
+	def cvFilters():
+		return opencvFilters
+
 	def getLocalIp():
 		return ip.main();
 	def rawImage():
