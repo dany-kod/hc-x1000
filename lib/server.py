@@ -24,7 +24,6 @@ from PIL import Image
 import ffmpeg
 import numpy
 import cv2
-import json
 from io import BytesIO
 
 
