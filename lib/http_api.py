@@ -13,6 +13,7 @@ import json
 import cv2
 import numpy
 from PIL import Image
+from io import BytesIO
 
 
 class httpApiServer():
