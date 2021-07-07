@@ -75,14 +75,10 @@ class hcX():
 
 	def getTracks():
 		return trackPid
-	# prepare a default image
-	
 	def camAvaliable():
 		return cameraAvaliable
-
 	def cvFilters():
 		return opencvFilters
-
 	def getLocalIp():
 		return ip.main();
 	def rawImage():
