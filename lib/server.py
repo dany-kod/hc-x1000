@@ -16,10 +16,8 @@ import atexit
 import sys
 import time
 
-import subprocess as sp
 
 
-from time import sleep
 from xml.etree import ElementTree
 from socketserver import ThreadingMixIn
 
