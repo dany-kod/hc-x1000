@@ -1,3 +1,4 @@
+import lib.server
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import threading
