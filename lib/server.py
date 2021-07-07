@@ -14,11 +14,7 @@ import os
 
 # import sys
 # import time
-
-
-
 # from xml.etree import ElementTree
-
 # import ffmpeg
 
 
