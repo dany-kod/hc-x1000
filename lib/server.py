@@ -11,11 +11,11 @@ from lib.http_api import httpApiServer
 
 import signal
 import atexit
+import os
 
 import sys
 import time
 
-import os
 
 
 from xml.etree import ElementTree
