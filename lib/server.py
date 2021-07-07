@@ -72,6 +72,8 @@ class hcX():
 		pipe = runrun.rawCommand(command)
 
 	def toggleCv():
+		global opencvFilters
+
 		if opencvFilters :
 			opencvFilters = False
 		else :
