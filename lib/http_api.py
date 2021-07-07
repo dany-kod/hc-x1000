@@ -56,7 +56,7 @@ class httpApiServer():
 							ROI = image[yl:yl+hl, xl:xl+wl]
 							blur = cv2.GaussianBlur(ROI, (1,1), 0) 
 							image[yl:yl+hl, xl:xl+wl] = blur
-							if regularImage :
+							if lib.server.hcX.camAvaliable() :
 								imgRGB=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
 							else :
 								imgRGB=cv2.cvtColor(blank_image,cv2.COLOR_BGR2RGB)
