@@ -77,7 +77,9 @@ class hcX():
 		else :
 			opencvFilters = True
 		return opencvFilters
-		
+	def address():
+		return hcx1000Address
+
 	def getTracks():
 		return trackPid
 	def camAvaliable():
