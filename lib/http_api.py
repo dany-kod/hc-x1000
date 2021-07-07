@@ -136,6 +136,17 @@ class httpApiServer():
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
 				return
+
+			if self.path.endswith('api/focal'):
+				self.send_response(200)
+				self.send_header('Content-type','application/json')
+				self.end_headers()
+				r = requests.get('http://'+str(lib.server.hcX.address())+'/cam.cgi?mode=setsetting&type=focal&value=open')
+				your_json = '["success"]'
+				parsed = json.loads(your_json)
+				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
+				return
+
 			if self.path.endswith('api/cvToggle'):
 				self.send_response(200)
 				self.send_header('Content-type','application/json')
