@@ -1,16 +1,13 @@
 from lib.opencv_modify import OpenCvModify
 from http.server import BaseHTTPRequestHandler, HTTPServer
-
+from socketserver import ThreadingMixIn
+from time import sleep
 
 
 import lib.server
 import threading
 import requests 
 import os
-
-from socketserver import ThreadingMixIn
-
-from time import sleep
 
 import json
 import cv2
