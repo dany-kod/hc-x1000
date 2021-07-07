@@ -36,7 +36,7 @@ class httpApiServer():
 				self.send_response(200)
 				self.send_header('Content-type','multipart/x-mixed-replace; boundary=--jpgboundary')
 				self.end_headers()
-				
+
 				while True:
 					try:
 						if lib.server.hcX.camAvaliable() :
@@ -136,16 +136,14 @@ class httpApiServer():
 				parsed = json.loads(your_json)
 				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
 				return
-			# if self.path.endswith('api/cvToggle'):
-			# 	toggleCv
-			# 	self.send_response(200)
-			# 	self.send_header('Content-type','application/json')
-			# 	self.end_headers()
-			# 	checkTest = testSystem.main()
-			# 	your_json = '["success '+str(checkTest)+'"]'
-			# 	parsed = json.loads(your_json)
-			# 	self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
-			# 	return
+			if self.path.endswith('api/cvToggle'):
+				self.send_response(200)
+				self.send_header('Content-type','application/json')
+				self.end_headers()
+				your_json = '["success '+str(lib.server.hcX.toggleCv())+'"]'
+				parsed = json.loads(your_json)
+				self.wfile.write((json.dumps(parsed, indent=4, sort_keys=True)).encode())
+				return
 
 			if self.path.endswith('api/test'):
 				self.send_response(200)
