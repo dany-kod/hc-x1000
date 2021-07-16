@@ -1,9 +1,10 @@
 
-# hc-x1000
-Control Panasonic's 4k Camera via web.
 
 ![alt text](lib/html/imgs/cam.jpg "Camera")
 
+
+# hc-x1000
+Control Panasonic's 4k Camera via web.
 
 ## Description
 
