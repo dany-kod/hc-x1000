@@ -32,3 +32,8 @@ According to ffplay the size that the stream throws is "640x360, 25 tbr, 1200k".
 - make instructions on how to get working
 - give a live demo example online.
 - k_i_f needs a catch if parameters aren't sent from the get
+
+
+## Donate
+
+![btc](https://github.com/kod3000/EventsManager/blob/d54efb0e1301a6cc1d508b8a9c571f3bb8da04b8/public/img/bitcoin.png) Bitcoin: `34zin8qyLHUcaN1E9veNoorPujaRVnr6ZZ`
